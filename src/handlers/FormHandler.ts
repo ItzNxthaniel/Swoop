@@ -25,8 +25,6 @@ type FacultyMember = {
   title: string
 }
 
-const spreadsheetId = "";
-
 enum FACULTY_ROLES  {
   Base = "1219282682962378753",
   Aramark = "1219283160357933156",
