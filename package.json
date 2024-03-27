@@ -10,10 +10,16 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/imap": "^0.8.40",
+    "@types/mailparser": "^3.4.4",
+    "@types/smtp-server": "^3.5.10",
+    "csv-parse": "^5.5.5",
     "discord.js": "^14.14.1",
     "dotenv": "^16.4.5",
+    "imap": "^0.8.19",
+    "mailparser": "^3.6.9",
     "public-google-sheets-parser": "^1.5.3",
-    "typescript": "^5.4.3",
-    "csv-parse": "^5.5.5"
+    "smtp-server": "^3.13.3",
+    "typescript": "^5.4.3"
   }
 }

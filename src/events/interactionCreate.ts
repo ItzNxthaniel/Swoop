@@ -4,8 +4,6 @@ import Wick from "../wick"
 module.exports = {
   name: Events.InteractionCreate,
   execute: async function (interaction: BaseInteraction, Wick: Wick) {
-    console.log("INTERACTION");
-
     if (!interaction.isChatInputCommand()) return;
     const command = Wick.Client.commands.get(interaction.commandName);
 
@@ -15,6 +13,7 @@ module.exports = {
     }
 
     try {
+      console.log(`[${new Date().toDateString()}] | ${interaction.user.tag} executed command ${command.data.name}.`)
       await command.execute(interaction, Wick);
     } catch (err) {
       console.error(err);
