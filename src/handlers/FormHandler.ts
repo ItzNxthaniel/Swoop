@@ -28,9 +28,8 @@ type FacultyMember = {
 enum FACULTY_ROLES  {
   Base = "1219282682962378753",
   Aramark = "1219283160357933156",
-  Professor = "1219282716953022524",
-  'Campus Safety' = "1219283087591084032",
-  'Campus Official (President, VP, Admissions, Registrar, Financial Aid, etc.)' = "1219283248543301652"
+  'Campus Faculty' = "1219282716953022524",
+  'Campus Staff' = "1219283248543301652"
 }
 
 export default class FormHandler {
@@ -92,7 +91,7 @@ export default class FormHandler {
         .find((user: AlreadyCheckedUser) => user.email == formSubmission["Email Address"])
 
       if (alreadyCheckedUser && alreadyCheckedUser.timeStamp == formSubmission.Timestamp) {
-        return;
+        continue;
       }
 
       alreadyCheckedJson.splice(i, 1);
@@ -151,7 +150,7 @@ export default class FormHandler {
       await WICKMember.roles.add(FACULTY_ROLES["Base"]);
 
       // @ts-ignore
-      await WICKMember.roles.add(FACULTY_ROLES[formSubmission["What best describes your Faculty Status?"]]);
+      await WICKMember.roles.add(FACULTY_ROLES[formSubmission["What best describes your Employee Status?"]]);
     }
   }
 }
